@@ -13,6 +13,7 @@ Thats it, nothing more, no bloat, no million things we think we (or you) will ne
 
 ## Requirements
 
+- Scala 2.8.x + (Lets face is, you really should be on at least 2.8.x)
 - SBT 0.10.x
 
 ## Install
@@ -20,3 +21,8 @@ Thats it, nothing more, no bloat, no million things we think we (or you) will ne
 - `git clone git://github.com/bheap/scala-utils`
 - `cd scala-utils`
 - `sbt update publish-local`
+
+## Usage
+
+    import com.bheap.scala-utils.FileUtils._
+    writeFile("somefile.txt", "some content")
