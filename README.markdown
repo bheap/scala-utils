@@ -24,5 +24,15 @@ Thats it, nothing more, no bloat, no million things we think we (or you) will ne
 
 ## Usage
 
-    import com.bheap.scala-utils.FileUtils._
+### FileUtils
+
+    import com.bheap.scalautils.FileUtils._
     writeFile("somefile.txt", "some content")
+
+### ResourceUtils
+
+    import com.bheap.scalautils.ResourceUtils._
+    def someMethodNeedingResourceManagement(someResource: String) = 
+      using (.. some resource ..) {
+	    resourceAction => resourceAction.action(...)
+      }
