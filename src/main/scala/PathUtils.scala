@@ -23,7 +23,8 @@ import java.io.File
 
 /** Convenience utility object for working with path structures and directory trees.
   *
-  * @author <a href="mailto:barrie@bheap.co.uk">Barrie McGuire</a> */
+  * @author <a href="mailto:barrie@bheap.co.uk">Barrie McGuire</a> 
+  * @since 1.0 */
 object PathUtils {
 
   /** Given a file return a stack containing the file itself and all of it's parent files
