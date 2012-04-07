@@ -21,12 +21,17 @@ package com.bheap.scalautils
   * @author <a href="mailto:ross@bheap.co.uk">rossputin</a>
   * @since 1.0 */
 object FileUtils {
+
   import java.io.FileWriter
   import ResourceUtils._
+
+  /** Write a file using with close handled by resource management. */
   def writeFile(fileName: String, content: String) = 
     using (new FileWriter(fileName)) {
       fileWriter => fileWriter.write(content)
     }
+
+  /** Write a file with flush and close handled by resource management. */
   def writeFileWithFlush(fileName: String, content: String) = 
     usingFlush(new FileWriter(fileName)) {
       fileWriter => fileWriter.write(content)

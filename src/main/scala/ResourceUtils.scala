@@ -23,6 +23,10 @@ package com.bheap.scalautils
   * @author <a href="mailto:ross@bheap.co.uk">rossputin</a>
   * @since 1.0 */
 object ResourceUtils {
+
+  /** Resource management with close. */
   def using[A <: {def close(): Unit}, B](ioResource: A)(f: A => B): B = try { f(ioResource) } finally { ioResource.close }
+
+  /** Resource management with flush and close. */
   def usingFlush[A <: {def flush(): Unit; def close(): Unit}, B](ioResource: A)(f: A => B): B = try {f(ioResource) } finally { ioResource.flush; ioResource.close}
 }
