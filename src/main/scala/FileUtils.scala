@@ -27,4 +27,8 @@ object FileUtils {
     using (new FileWriter(fileName)) {
       fileWriter => fileWriter.write(content)
     }
+  def writeFileWithFlush(fileName: String, content: String) = 
+    usingFlush(new FileWriter(fileName)) {
+      fileWriter => fileWriter.write(content)
+    }
 }
